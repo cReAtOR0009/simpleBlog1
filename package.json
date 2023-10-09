@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "check": "concurrently \" npm run server\"  \"npm run client\"",
+    "check": "concurrently \"npm i\" \" npm run server\"  \"npm run client\"",
     "server":"cd server && npm i && npm start",
     "client": "cd client && npm i && npm start "
   },
