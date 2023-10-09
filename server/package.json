@@ -4,12 +4,10 @@
     "description": "A Simple Blogger site built with MERN Stack",
     "main": "server.js",
     "scripts": {
-        "startServer": "node server.js",
-        "startAll": "npm i && npm run startServer && npm run client",
-        "startClient":"npm start",
+        "start": "node server.js",
         "server": "nodemon server.js",
-        "client": "npm i && npm start  --prefix ../client",
-        "dev": "concurrently \"npm i\" \"npm run startServer\" \"npm run client\""
+        "client": "npm start --prefix ../client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
     },
     "repository": {
         "type": "git",
