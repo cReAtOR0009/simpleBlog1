@@ -3,6 +3,7 @@ const colors = require('colors');
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config();
 const PORT = process.env.PORT || 9000;
+const path = require("path")
 
 const app = express();
 
@@ -22,5 +23,13 @@ connectDB();
 
 app.use ('/api/users', require('./routes/userRoutes'));
 app.use ('/api/blogs', require('./routes/blogRoutes'));
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '/../client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/build/index.html'));
+});
+
 
 app.listen(PORT, () => console.info(`Server is running on port ${PORT}`.green.underline.bold));
