@@ -19,9 +19,9 @@ export default function Login() {
     const {loginUser, clearErrors, toasts, isAuthenticated} = useAuth();
     const navigate = useNavigate()
     const [user, setUser] = useState({
-        firstName: 'Peter', lastName: 'Pan', 
-        email: 'peterpan@mail.com', password: 'Password123', 
-        confirmPassword: 'Password123'
+        firstName: '', lastName: '', 
+        email: '', password: '', 
+        confirmPassword: ''
     })
 
     const [showPassword, setShowPassword] = useState(false)
